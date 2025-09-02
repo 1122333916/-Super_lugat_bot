@@ -1,1 +1,1 @@
-# -Super_lugat_bot
+bot_ру
