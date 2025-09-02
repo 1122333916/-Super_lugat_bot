@@ -26,4 +26,4 @@ def translate(message):
     else:
         bot.reply_to(message, "Kechirasiz, bu so‘z lug‘atda topilmadi 😔")
 
-bot.polling(
+bot.polling() 
