@@ -1,1 +1,56 @@
 
+Ҳаа, айнан шу! ✅ 👌
+
+Энди шу ойна ичига мен берган кодни қўйишингиз керак.
+
+Мана кодни қайта жўнатаман:
+
+import telebot
+
+# BotFather дан олган токенингизни шу ерга қўйинг
+TOKEN = "YOUR_BOT_TOKEN"
+bot = telebot.TeleBot(TOKEN)
+
+# Оддий луғат (сўзлар базаси)
+lugat = {
+    "salom": "привет",
+    "kitob": "книга",
+    "olma": "яблоко",
+    "dost": "друг",
+    "maktab": "школа"
+}
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to(message, "Assalomu alaykum! Men lug‘at botiman. So‘z yuboring, tarjima qilib beraman.")
+
+@bot.message_handler(func=lambda message: True)
+def translate(message):
+    text = message.text.lower()
+    if text in lugat:
+        bot.reply_to(message, f"🇺🇿 {text} → 🇷🇺 {lugat[text]}")
+    else:
+        bot.reply_to(message, "Kechirasiz, bu so‘z lug‘atda topilmadi 😔")
+
+bot.polling()
+
+
+---
+
+📌 Қадам:
+
+1. Юқоридаги кодни белгилаб кўчиринг.
+
+
+2. Скриншотдаги оқ ойнага қўйинг.
+
+
+3. "YOUR_BOT_TOKEN" ўрнига BotFather берган токенни ёзинг.
+
+
+4. Кейин юқоридаги Commit changes яшил тугмани босинг ✅
+
+
+
+👉 Савол: токенингиз тайёрми ёки сизга BotFather орқали бот очишни ҳам тушунтириб берсамми?
+
